@@ -1,0 +1,26 @@
+{% extends 'hub/layout.html' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Home is here</h1>
+    {% for i in carry %}
+        <div>
+            <ul>
+                <a href = "task/{{i.id}}">
+                    <li>{{i.title}}</li>
+                </a>
+            </ul>
+        </div>
+    {% endfor %}
+
+    <div>
+        <form method="POST" action = "/hub/">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Sub</button>
+        </form>
+    </div>
+{% endblock %}
