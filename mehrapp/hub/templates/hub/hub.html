@@ -1,0 +1,33 @@
+{% extends "hub/layout.html" %}
+
+{% block title %}
+    <title>Hub</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome to hub now!</h1>
+
+
+    <!-- <form method = "POST" action = "{% url 'indexhub' %}" >
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Sub</button>
+    </form>
+     -->
+    {% for i in carry  %}
+    <div>
+        <ul>
+            <a href =  "task/{{i.id}}">
+                <li>{{i.title}}</li>
+            </a>
+        </ul>
+    </div>
+    {% endfor %}
+
+    <a href = "{% url 'indexadd' %}" >
+        <button type="button" >Add Page</button>
+    </a>
+
+    
+    
+{% endblock %}
